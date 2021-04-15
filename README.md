@@ -2,12 +2,10 @@
 
 
 ## Name / Student ID
-***
 Hiroki Ohara / 20M13794
 
 
 ## Table of Contents
-***
 |          | Topic                                | Sample code               |
 | -------- | ------------------------------------ | ------------------------- |
 | Class 1  | Introduction to parallel programming |                           |
