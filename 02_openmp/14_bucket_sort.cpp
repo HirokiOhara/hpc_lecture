@@ -19,8 +19,7 @@ int main() {
 #pragma omp atomic update
     bucket[key[i]]++;
   std::vector<int> offset(range,0);
-
-//---> Failed to do "Parallel Prefix Sum"
+//===== Failed to do "Parallel Prefix Sum" =====
 //  std::vector<int> otw(range,0);
 //#pragma omp parallel
 //  for (int j=1; j<range; j<<=1){
@@ -31,7 +30,6 @@ int main() {
 //    for (int i=j; i<range; i++)
 //      offset[i] += otw[i-j];
 //  }
-
   for (int i=1; i<range; i++)
     offset[i] = offset[i-1] + bucket[i-1];
 
@@ -42,9 +40,9 @@ int main() {
       key[j++] = i;
     }
   }
-#pragma omp parallel
+//#pragma omp parallel
   for (int i=0; i<n; i++) {
-#pragma omp single
+//#pragma omp single
     printf("%d ",key[i]);
   }
   printf("\n");
